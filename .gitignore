@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.streamlit/*
+!.streamlit/
+!.streamlit/config.toml
+models/*
+!models/.gitkeep
+models/**/.cache/

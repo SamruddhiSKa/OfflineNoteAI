@@ -1,0 +1,123 @@
+[
+  {
+    "id": "faculty-meeting-1",
+    "focus": "grammar errors, names, deadlines, confirmed decision",
+    "rough": "meeting with hod on 15 oct. project teams have to submit report by monday. rahul will check the lab computers. students said that the projector is not working. hod said get it repaired before next week. next meeting maybe friday.",
+    "expected": {
+      "names": ["rahul", "hod"],
+      "dates": ["15 oct"],
+      "deadlines": ["by monday", "before next week"],
+      "responsible_persons": ["rahul"],
+      "confirmed_decisions": [],
+      "tentative_items": ["next meeting maybe friday"],
+      "negations": ["not working"],
+      "must_not_invent": ["attendees", "chairperson name", "approved decision"]
+    }
+  },
+  {
+    "id": "lab-maintenance-2",
+    "focus": "missing punctuation, abbreviation, negation, responsible person",
+    "rough": "HOD and dept head met about lab maintenance the air conditioner is not working in room 101 rahul to call the technician by wednesday",
+    "expected": {
+      "names": ["rahul"],
+      "abbreviations": ["HOD", "dept"],
+      "dates": [],
+      "deadlines": ["by wednesday"],
+      "responsible_persons": ["rahul"],
+      "confirmed_decisions": [],
+      "tentative_items": [],
+      "negations": ["not working"],
+      "must_not_invent": ["meeting date", "meeting time", "approver"]
+    }
+  },
+  {
+    "id": "project-review-3",
+    "focus": "tentative vs confirmed decision, multiple agenda items, repeated info",
+    "rough": "project review on 22 october at 11 am. the committee discussed unit 4 completion. the committee approved the revised syllabus. faculty should finish unit 4 before internal exams. the committee approved the revised syllabus. lab timetable needs revision.",
+    "expected": {
+      "names": [],
+      "dates": ["22 october"],
+      "deadlines": ["before internal exams"],
+      "responsible_persons": [],
+      "confirmed_decisions": ["approved the revised syllabus"],
+      "tentative_items": [],
+      "negations": [],
+      "must_not_invent": ["attendees", "chairperson"]
+    }
+  },
+  {
+    "id": "student-committee-4",
+    "focus": "incomplete information, no invented attendees or chair",
+    "rough": "students met to discuss the annual fest. no date was decided. the budget is not final.",
+    "expected": {
+      "names": [],
+      "dates": [],
+      "deadlines": [],
+      "responsible_persons": [],
+      "confirmed_decisions": [],
+      "tentative_items": [],
+      "negations": ["not final"],
+      "must_not_invent": ["meeting date", "attendees", "chairperson", "budget amount", "approved budget"]
+    }
+  },
+  {
+    "id": "department-planning-5",
+    "focus": "longer notes, multiple agenda items, date and time, responsible persons",
+    "rough": "department planning meeting held on 5 november at 10:30 am in conference hall b. hod neha sharma chaired the meeting. attendees included rahul verma and neha desai. the syllabus for semester 3 was discussed. the lab fee was approved at rs 5000. rahul will submit the equipment list by friday. the projector purchase was suggested maybe next month.",
+    "expected": {
+      "names": ["neha sharma", "rahul verma", "neha desai", "rahul"],
+      "dates": ["5 november"],
+      "deadlines": ["by friday"],
+      "responsible_persons": ["rahul"],
+      "confirmed_decisions": ["lab fee was approved at rs 5000"],
+      "tentative_items": ["projector purchase was suggested maybe next month"],
+      "negations": [],
+      "must_not_invent": ["meeting end time", "approver signature"]
+    }
+  },
+  {
+    "id": "very-short-6",
+    "focus": "very short notes with minimal information",
+    "rough": "lab broken.",
+    "expected": {
+      "names": [],
+      "dates": [],
+      "deadlines": [],
+      "responsible_persons": [],
+      "confirmed_decisions": [],
+      "tentative_items": [],
+      "negations": [],
+      "must_not_invent": ["everything"]
+    }
+  },
+  {
+    "id": "ambiguous-7",
+    "focus": "ambiguous statement preserved not converted to decision",
+    "rough": "maybe purchase new computers for the lab if budget allows.",
+    "expected": {
+      "names": [],
+      "dates": [],
+      "deadlines": [],
+      "responsible_persons": [],
+      "confirmed_decisions": [],
+      "tentative_items": ["maybe purchase new computers for the lab if budget allows"],
+      "negations": [],
+      "must_not_invent": ["decision to purchase", "deadline", "responsible person"]
+    }
+  },
+  {
+    "id": "negation-preservation-8",
+    "focus": "negation must not be flipped into a positive requirement",
+    "rough": "hod said do not buy new computers. rahul must not delete the old records.",
+    "expected": {
+      "names": ["hod", "rahul"],
+      "dates": [],
+      "deadlines": [],
+      "responsible_persons": ["rahul"],
+      "confirmed_decisions": [],
+      "tentative_items": [],
+      "negations": ["do not buy", "must not delete"],
+      "must_not_invent": ["decision to buy computers", "approved purchase"]
+    }
+  }
+]

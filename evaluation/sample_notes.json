@@ -1,0 +1,72 @@
+[
+  {
+    "id": "osmosis",
+    "rough": "osmosis is movement of water molecules across a selectively permeable membrane from high water concentration to low water concentration.",
+    "reference": "Osmosis is the movement of water molecules across a selectively permeable membrane from a region of high water concentration to a region of low water concentration.",
+    "critical_terms": ["water molecules", "selectively permeable membrane"]
+  },
+  {
+    "id": "newtons-second-law",
+    "rough": "newtons second law says force equals mass times acceleration F=ma. if mass is constant more force makes more acceleration.",
+    "reference": "Newton's second law states that force equals mass times acceleration: F = ma. If mass is constant, greater force produces greater acceleration.",
+    "critical_terms": ["F", "ma", "mass", "acceleration"]
+  },
+  {
+    "id": "mitochondria",
+    "rough": "mitochondria produces ATP through cellular respiration. oxygen is used in aerobic respiration and carbon dioxide is released.",
+    "reference": "Mitochondria produce ATP through cellular respiration. Oxygen is used in aerobic respiration, and carbon dioxide is released.",
+    "critical_terms": ["ATP", "oxygen", "carbon dioxide"]
+  },
+  {
+    "id": "photosynthesis",
+    "rough": "plants use light, water and carbon dioxide for photosynthesis. glucose and oxygen are produced. the chlorophyll absorbs light.",
+    "reference": "Plants use light, water, and carbon dioxide for photosynthesis. Glucose and oxygen are produced. Chlorophyll absorbs light.",
+    "critical_terms": ["carbon dioxide", "glucose", "oxygen", "chlorophyll"]
+  },
+  {
+    "id": "water-boiling",
+    "rough": "at standard atmospheric pressure water boils at 100 degrees celsius. boiling point changes when pressure changes.",
+    "reference": "At standard atmospheric pressure, water boils at 100 degrees Celsius. The boiling point changes when pressure changes.",
+    "critical_terms": ["100", "pressure"]
+  },
+  {
+    "id": "fragmented-gravity",
+    "rough": "gravity pull object toward earth. objects falling down. force acts on mass.",
+    "reference": "Gravity pulls objects toward Earth. Objects fall downward because a force acts on their mass.",
+    "critical_terms": ["gravity", "force", "mass"],
+    "focus": "fragmented sentences and connections",
+    "human_review": {
+      "grammar_quality": "Did correction repair the fragments without making the causal connection up?",
+      "meaning_preservation": "Are gravity, falling objects, force, and mass claims all preserved without adding unsupported facts?"
+    }
+  },
+  {
+    "id": "repeated-observation",
+    "rough": "The result is important. This result is important for the experiment because the result is important.",
+    "reference": "The result is important for the experiment.",
+    "critical_terms": ["result", "experiment"],
+    "focus": "repetition reduction",
+    "human_review": {
+      "grammar_quality": "Is the final text grammatical and readable?",
+      "meaning_preservation": "Was redundant wording reduced without deleting a distinct experimental claim?"
+    }
+  },
+  {
+    "id": "already-correct",
+    "rough": "The hippocampus plays a central role in forming new memories.",
+    "reference": "The hippocampus plays a central role in forming new memories.",
+    "critical_terms": ["hippocampus", "memories"],
+    "focus": "already-correct text"
+  },
+  {
+    "id": "meaning-and-addition-review",
+    "rough": "Plants absorb light through chlorophyll, but they do not absorb oxygen for photosynthesis.",
+    "reference": "Plants absorb light through chlorophyll, but they do not absorb oxygen for photosynthesis.",
+    "critical_terms": ["chlorophyll", "oxygen", "not"],
+    "focus": "negation and unsupported additions",
+    "human_review": {
+      "grammar_quality": "Are punctuation and grammar correct?",
+      "meaning_preservation": "Is the negation that plants do not absorb oxygen retained, with no unsupported claim added?"
+    }
+  }
+]

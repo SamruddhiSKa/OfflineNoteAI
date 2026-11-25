@@ -1,0 +1,9 @@
+﻿powershell : Could not find platform independent libraries <prefix>
+At line:4 char:1
++ powershell -NoProfile -ExecutionPolicy Bypass -Command "Set-Location  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Could not find ...raries <prefix>:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+C:\Python314\python.exe: can't open file 'E:\\Gauri\\projects\\OfflineNoteAI\\inspect_test3.py': [Errno 2] No such 
+file or directory
