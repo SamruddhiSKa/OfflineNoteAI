@@ -19,8 +19,29 @@ from processing import (
 )
 
 TEMPLATE_PATH = Path(__file__).resolve().parent / "templates" / "faculty_mom_template.docx"
+LOGO_PATH = Path(__file__).resolve().parent / "assets" / "mit_adt_logo.png"
 
 EMPTY_PLACEHOLDER = "Not specified"
+
+
+def _add_logo_top_right(doc: Document) -> None:
+    if not LOGO_PATH.is_file():
+        return
+
+    table = doc.add_table(rows=1, cols=2)
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.autofit = False
+    table.columns[0].width = Inches(4.75)
+    table.columns[1].width = Inches(2.75)
+
+    table.rows[0].cells[0].text = ""
+    table.rows[0].cells[1].text = ""
+    logo_cell = table.rows[0].cells[1]
+    logo_paragraph = logo_cell.paragraphs[0]
+    logo_paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    logo_paragraph.paragraph_format.space_before = Pt(0)
+    logo_paragraph.paragraph_format.space_after = Pt(0)
+    logo_paragraph.add_run().add_picture(str(LOGO_PATH), width=Inches(2.35))
 
 
 def _field(doc, label: str, value: str) -> None:
@@ -89,18 +110,26 @@ def build_mom_docx(minutes: MeetingMinutes) -> bytes:
     normal = doc.styles["Normal"]
     normal.font.name = "Aptos"
     normal.font.size = Pt(10)
+    _add_logo_top_right(doc)
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.space_before = Pt(8)
+    p.paragraph_format.space_after = Pt(4)
     r = p.add_run(
         minutes.institution or "MIT Art, Design and Technology University, Pune"
     )
     r.bold = True
-    r.font.size = Pt(15)
+    r.font.size = Pt(13)
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p.add_run("Department / Committee: ").bold = True
-    p.add_run(minutes.department or EMPTY_PLACEHOLDER)
+    p.paragraph_format.space_after = Pt(6)
+    department_run = p.add_run("Department / Committee: ")
+    department_run.bold = True
+    department_run.font.size = Pt(11)
+    department_value = p.add_run(minutes.department or EMPTY_PLACEHOLDER)
+    department_value.bold = True
+    department_value.font.size = Pt(11)
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.add_run(minutes.meeting_title or "MINUTES OF MEETING").bold = True

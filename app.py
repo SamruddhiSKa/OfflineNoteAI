@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import base64
 import hashlib
 import importlib.util
 import re
@@ -219,6 +220,7 @@ st.markdown(
         padding-top: 0.45rem;
       }
       .paper-preview {
+        position: relative;
         background: var(--document-bg);
         border: 1px solid #E3DED3;
         border-radius: 3px;
@@ -228,18 +230,29 @@ st.markdown(
         min-height: 24rem;
         padding: clamp(1.4rem, 5vw, 3.4rem) clamp(1.15rem, 5.5vw, 3.65rem);
       }
+      .paper-logo {
+        position: absolute;
+        top: clamp(0.8rem, 2vw, 1.4rem);
+        right: clamp(1.15rem, 5.5vw, 3.65rem);
+        width: clamp(120px, 20vw, 180px);
+        height: auto;
+        z-index: 2;
+      }
       .paper-institution {
-        color: #5D5A55;
+        color: #292923;
         font-family: var(--sans);
-        font-size: 0.69rem;
-        letter-spacing: 0.03em;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        margin-top: 2.2rem;
         text-align: center;
       }
       .paper-department {
-        color: #5D5A55;
+        color: #292923;
         font-family: var(--sans);
-        font-size: 0.75rem;
-        margin-top: 0.8rem;
+        font-size: 0.82rem;
+        font-weight: 700;
+        margin-top: 0.35rem;
         text-align: center;
       }
       .paper-title {
@@ -519,8 +532,18 @@ def _escape(value: object) -> str:
 
 def _preview_markup(minutes: MeetingMinutes, generated: bool) -> str:
     title = minutes.meeting_title or "Minutes of Meeting"
+    logo_path = Path(__file__).resolve().parent / "assets" / "mit_adt_logo.png"
+    logo_markup = ""
+    if logo_path.is_file():
+        logo_data = base64.b64encode(logo_path.read_bytes()).decode("ascii")
+        logo_markup = (
+            '<img class="paper-logo" '
+            f'src="data:image/png;base64,{logo_data}" '
+            'alt="MIT Art, Design and Technology University logo">'
+        )
     parts = [
         '<article class="paper-preview">',
+        logo_markup,
         f'<div class="paper-institution">{_escape(minutes.institution or "MIT Art, Design and Technology University, Pune")}</div>',
         f'<div class="paper-department">Department / Committee: {_escape(minutes.department or "Not specified")}</div>',
         f'<div class="paper-title">{_escape(title)}</div>',

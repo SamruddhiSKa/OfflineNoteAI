@@ -84,7 +84,6 @@ evaluation/                     Reference sets (sample_notes.json, meeting_notes
 tests/                          Processing, document, app, pipeline, preprocessing, and model tests
 tests/integration/              Local-model offline integration test
 scripts/                        Model setup and optional quality-evaluation commands
-backup_20261029/                Recoverable backup of source files before completion edits
 ```
 
 ## Tests
